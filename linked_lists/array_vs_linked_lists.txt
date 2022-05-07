@@ -1,0 +1,50 @@
+Array vs Linkedlists
+
+- > Custo de acessar um elemento
+    -> Constant time para Arrays 0(1) pois os dados são estruturados em um bloco continuo de memória.
+    
+    -> Como na lista ligada, armazenamos no node "head" apenas o endereço de memória do proximo elemento
+      para acessar o pior dos casos (ultimo) teremos que percorrer toda lista O(n)
+
+    -> Array performa melhor que a Linkedlists
+  
+- > Memory Requirements
+    -> Array
+      -> Tamanho fixo.
+      -> Uso extra de memória.
+      -> Em alguns casos, para a criação de um grande Array, um bloco inteiro de memória pode não estar disponível
+
+    
+    -> Linkedlists
+      -> Sem uso extra de memória
+      -> Usa memória extra para os ponteiros dos nodes que armazenam os endereços.
+      -> Ideal para uso quando a parte que armazena os dados é grande
+      -> Memória livre para uso em blocos menores.
+
+- > Custo para inserir um elemento
+  -> Array
+    -> No começo do Array: é O(n) com "n" sendo o número de elementos que terão que sofrer shift para a direita
+      para o elemento ser inserido na posição A[0]
+
+    -> No final do Array: é O(1) se o array não estiver cheio, pois apenas inserimos o elemento no final
+      do ultimo index "n"
+
+    -> Na posição x do Array: O(n) sendo n o número de elementos que sofrerão shift para o ajuste do Array
+  
+
+  -> LinkedList
+    -> No começo da LinkedList: é O(1), constant time pois só precisamos inserir o endereço de Memória
+      do elemento a ser inserido no Node "head" da lista.
+    
+    -> No final da LinkedList: é O(n) pois é necessário travessar toda lista e ajustar todos os ponteiros
+
+    -> Na posição X da LinkedList: é 0(n) pois os "n" nodes terão que ser ajustados para o node a ser
+      inserido.
+
+  
+-> Arrays são mais simples de usar em C ou C++ pois ficamos menos vulneráveis a erros como
+  segmentation fault e memory leak
+
+
+
+

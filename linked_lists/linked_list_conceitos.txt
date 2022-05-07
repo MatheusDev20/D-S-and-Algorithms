@@ -2,9 +2,9 @@ Linked List é uma implementação do ADT (Abstract Data Type) List
 
   -> Não são um bloco contínuo de endereços de memória como arrays.
 
-  -> Elementos são ligados por nodes (ponteiros) que armazenam o endereço de memória do proximo elemento.
+  -> Elementos são ligados por nodes, que carregam em uma de suas partes ponteiros que armazenam o endereço de memória do proximo elemento.
 
-  -> Bloco possui uma parte referente ao "dado" e o "endereço" do próximo elemento.
+  -> Bloco (node) possui uma parte referente ao "dado" e o "endereço" do próximo elemento.
       -> Exemplo em C de um struct representando um "Node" da Linked List
 
         Struct Node {
