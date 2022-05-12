@@ -48,8 +48,7 @@ int main()
   {
     printf("Enter the new number \n");
     scanf("%d", &x);
-    // head = InsertAtBegining(x, head);
-    InsertAnyPosition(x, 1, head);
+    head = InsertAtBegining(x, head);
     Print(head);
   };
 };

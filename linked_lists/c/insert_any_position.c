@@ -22,7 +22,6 @@ void Insert(int data, int position)
   }
 
   Node *temp2 = head;
-  printf(head);
   for (i = 1; i < position - 1; i++)
   {
     temp2 = temp2->next;
