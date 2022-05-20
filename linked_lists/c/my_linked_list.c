@@ -29,7 +29,17 @@ Node *getNode(Student *student)
 
   return newNode;
 }
+int getSize(Node *head)
+{
+  int size = 0;
+  while (head != NULL)
+  {
+    head = head->next;
+    size++;
+  }
 
+  return size;
+}
 Node *InsertBegining(Node *head, Student StudentData)
 {
 
@@ -45,32 +55,74 @@ Node *InsertBegining(Node *head, Student StudentData)
 
   return head;
 }
+void InsertAnyNthPosition(Node *head, Student StudentData, int position)
+{
+
+  if (position < 1 || position > getSize(head) + 1)
+  {
+    printf("Posição | %d | inválida \n", getSize(head));
+  }
+  Node *temp1 = (Node *)malloc(sizeof(struct Node));
+  // L.L starts on 1
+  Node *temp2 = head;
+
+  // Loop to get the n-1 element (e.g insert at position 5) returns the 4 element of L.L
+  for (int i = 1; i < position - 1; i++)
+  {
+    temp2 = temp2->next;
+  }
+  // Node to be inserted at nth position
+  temp1->data.EnrollmentNumber = StudentData.EnrollmentNumber;
+  temp1->data.grade = StudentData.grade;
+
+  temp1->next = temp2->next;
+
+  temp2->next = temp1;
+}
 
 void PrintList(Node *head)
 {
+  int i = 1;
   while (head != NULL)
   {
-    printf("Grade : %2.f \n", head->data.grade);
+    printf("Student %d -> Grade : %.2f ||  ", i, head->data.grade);
     printf("Enrollment Number: %d \n", head->data.EnrollmentNumber);
 
     head = head->next;
+    i++;
   }
   printf("\n");
 }
+
 int main()
 {
   Node *head = NULL;
-  Student newStudent;
 
-  newStudent.EnrollmentNumber = 14;
-  newStudent.grade = 9.82;
+  Student firstStudent;
+  firstStudent.EnrollmentNumber = 10;
+  firstStudent.grade = 9.82;
 
   Student secondStudent;
-  secondStudent.EnrollmentNumber = 13;
+  secondStudent.EnrollmentNumber = 11;
   secondStudent.grade = 5.43;
 
-  head = getNode(&newStudent);
+  Student thirdStudent;
+  thirdStudent.EnrollmentNumber = 12;
+  thirdStudent.grade = 7.23;
+
+  Student fourthStudent;
+  fourthStudent.EnrollmentNumber = 13;
+  fourthStudent.grade = 9.32;
+
+  Student fifthStudent;
+  fifthStudent.EnrollmentNumber = 14;
+  fifthStudent.grade = 2.54;
+
+  head = getNode(&firstStudent);
   head = InsertBegining(head, secondStudent);
+  head = InsertBegining(head, thirdStudent);
+  head = InsertBegining(head, fourthStudent);
+  InsertAnyNthPosition(head, fifthStudent, 3);
 
   PrintList(head);
   return 0;
