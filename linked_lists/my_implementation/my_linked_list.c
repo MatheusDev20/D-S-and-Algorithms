@@ -29,6 +29,15 @@ Node *getNode(Student *student)
 
   return newNode;
 }
+
+Student getStudent(int EnrollmentNumber, float grade)
+{
+  Student student;
+  student.EnrollmentNumber = EnrollmentNumber;
+  student.grade = grade;
+
+  return student;
+}
 int getSize(Node *head)
 {
   int size = 0;
@@ -97,11 +106,31 @@ void DeleteNodeNthPosition(Node **head, int position)
   free(temp2);
 }
 
+void ReverseListIteration(Node **head)
+{
+  Node *current, *previous, *next;
+  current = *head;
+  previous = NULL;
+
+  printf("After get into Reverse Function -> %p \n", current);
+
+  while (current != NULL)
+  {
+    next = current->next;
+    printf("Endereço de memória do segundo Node -> %p \n", next);
+    current->next = previous;
+    previous = current;
+    current = next;
+  }
+  *head = previous;
+}
 void PrintList(Node *head)
+
 {
   int i = 1;
   while (head != NULL)
   {
+    printf("\n");
     printf("Student %d -> Grade : %.2f ||  ", i, head->data.grade);
     printf("Enrollment Number: %d \n", head->data.EnrollmentNumber);
 
@@ -115,33 +144,25 @@ int main()
 {
   Node *head = NULL;
 
-  Student firstStudent;
-  firstStudent.EnrollmentNumber = 10;
-  firstStudent.grade = 9.82;
+  Student firstStudent = getStudent(10, 9.82);
 
-  Student secondStudent;
-  secondStudent.EnrollmentNumber = 11;
-  secondStudent.grade = 5.43;
+  Student secondStudent = getStudent(11, 5.43);
 
-  Student thirdStudent;
-  thirdStudent.EnrollmentNumber = 12;
-  thirdStudent.grade = 7.23;
+  Student thirdStudent = getStudent(12, 7.23);
 
-  Student fourthStudent;
-  fourthStudent.EnrollmentNumber = 13;
-  fourthStudent.grade = 9.32;
+  Student fourthStudent = getStudent(13, 9.32);
 
-  Student fifthStudent;
-  fifthStudent.EnrollmentNumber = 14;
-  fifthStudent.grade = 2.54;
+  Student fifthStudent = getStudent(14, 2.54);
 
   head = getNode(&firstStudent);
+
   head = InsertBegining(head, secondStudent);
   head = InsertBegining(head, thirdStudent);
   head = InsertBegining(head, fourthStudent);
+
   InsertAnyNthPosition(head, fifthStudent, 3);
   DeleteNodeNthPosition(&head, 4);
-
+  ReverseListIteration(&head);
   PrintList(head);
   return 0;
 }
