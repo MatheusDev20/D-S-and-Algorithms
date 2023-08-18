@@ -13,7 +13,8 @@ void Reverse()
   Node *next;
   Node *prev = NULL;
   Node *current;
-
+  // [1,2,3]
+  // [3,2,1]
   current = head;
   while (current != NULL)
   {

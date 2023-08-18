@@ -16,7 +16,7 @@ Node *InsertAtBegining(int x, Node *head)
   if (head != NULL)
   {
     printf("Head is already different from NULL \n");
-    temp->next = head; // O que estava no Head anteriormente precisa ser o next do primeiro elemento
+    temp->next = head; //   O que estava no Head anteriormente precisa ser o next do primeiro elemento
                        // Caso a lista não esteja vazia
   };
 
@@ -38,7 +38,9 @@ void Print(Node *head)
 
 int main()
 {
-  Node *head = NULL; // Armazena o primeir endereço da lista
+  Node *head = NULL; // Armazena o primeiro endereço da lista
+  // int a = 3;
+  // int *pt_a = &a; 
   printf("Lets Create a Linked List, Enter the number of elements \n");
 
   int i, x, n;
@@ -48,6 +50,7 @@ int main()
   {
     printf("Enter the new number \n");
     scanf("%d", &x);
+    printf("%p\n", head);
     head = InsertAtBegining(x, head);
     Print(head);
   };
