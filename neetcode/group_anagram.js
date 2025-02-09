@@ -12,7 +12,6 @@ const isAnagram = (s, m) => {
     if (!count[char]) return false;
     count[char]--;
   }
-
   return Object.values(count).every(val => val === 0);
 };
 
