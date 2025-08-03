@@ -24,8 +24,6 @@ const groupAnagram = (anagramList) => {
 
   const [first, ...tail] = anagramList;
   const group = [first];
-
-  // Remove os anagramas de tail e adiciona ao grupo
   const remaining = [];
   for (let word of tail) {
     if (isAnagram(first, word)) {
