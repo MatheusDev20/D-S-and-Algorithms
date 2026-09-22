@@ -1,0 +1,56 @@
+1. Return the sum of two integers.
+2. Check if a number is even.
+3. Return the larger of two numbers.
+4. Return the largest number in a slice.
+5. Sum all numbers in a slice.
+6. Count how many positive numbers are in a slice.
+7. Count how many even numbers are in a slice.
+8. Return the sum of only the positive numbers.
+9. Find the smallest number in a slice.
+10. Reverse a Vec<i32>.
+11. Count the number of characters in a string.
+12. Count vowels in a string.
+13. Check if a string starts with a given character.
+14. Reverse a string.
+15. Check if a word is a palindrome.
+16. Count how many words exist in a sentence.
+17. Find the longest word in a sentence.
+18. Convert a string to uppercase without using to_uppercase() if you want extra pain.
+19. Remove spaces from a string.
+20. Count how many times a specific character appears.
+21. Remove duplicate numbers from a vector.
+22. Return only the even numbers from a vector.
+23. Return a new vector where every number is doubled.
+24. Find the second-largest distinct number.
+25. Check whether a vector contains a given number.
+26. Find the index of a number and return Option<usize>.
+27. Merge two vectors.
+28. Check if two vectors contain the same elements in the same order.
+29. Rotate a vector one position to the right.
+30. Find the average of a vector of numbers.
+
+Then start adding a little more Rust-specific stuff:
+
+31. Write a function that safely returns the first element using Option.
+32. Write a function that safely divides two numbers using Option.
+33. Parse a String into an integer and handle failure using Result.
+34. Create a struct Person with name and age.
+35. Write a method that tells whether a Person is an adult.
+36. Create an enum representing Success and Failure.
+37. Use match to handle multiple enum variants.
+38. Store names and ages in a HashMap.
+39. Count character frequencies using a HashMap.
+40. Count word frequencies in a sentence.
+
+Then you can enter beginner-LeetCode territory:
+
+41. FizzBuzz.
+42. Two Sum.
+43. Valid Palindrome.
+44. Contains Duplicate.
+45. Maximum Subarray — brute-force first.
+46. Move Zeroes.
+47. Merge Sorted Arrays.
+48. Valid Parentheses.
+49. Binary Search.
+50. Find the missing number from 0..n.
